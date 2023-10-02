@@ -15,9 +15,7 @@ const titleCased = () => {
   let newTitle = [];
   [...tutorials].map(function (title) {
     let wordsArray = title.split(" ");
-
-
-    wordsArray.map(function(word) {
+    const newWordsArray = wordsArray.map(function(word) {
       for (let index = 0; index < word.length; index++) {
         if (index == 0) {
           word = word[index].toUpperCase() + word.slice(1);
@@ -26,9 +24,7 @@ const titleCased = () => {
       console.log(word);
       return word;
     });
-
-    console.log(wordsArray);
-    return newTitle.push(wordsArray.join(" "));
+    return newTitle.push(newWordsArray.join(" "));
   });
   return newTitle;
 }
