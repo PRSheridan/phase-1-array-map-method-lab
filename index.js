@@ -14,14 +14,20 @@ const tutorials = [
 const titleCased = () => {
   let newTitle = [];
   [...tutorials].map(function (title) {
-
-
     let wordsArray = title.split(" ");
+
+
     wordsArray.map(function(word) {
-      word[0] = word[0].toUpperCase();
+      for (let index = 0; index < word.length; index++) {
+        if (index == 0) {
+          word = word[index].toUpperCase() + word.slice(1);
+        }
+      }
+      console.log(word);
+      return word;
     });
 
-
+    console.log(wordsArray);
     return newTitle.push(wordsArray.join(" "));
   });
   return newTitle;
